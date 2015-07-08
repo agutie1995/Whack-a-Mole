@@ -1,0 +1,41 @@
+body {
+	background: url('/img/starbackground.jpg') no-repeat top center fixed;
+    background-size: cover;
+    background-color: #000
+}
+
+/*h1 {
+	color: grey;
+	margin: auto;
+}*/
+
+button {
+	color: purple;
+	background-color: black;
+	border: 1px solid purple;
+	margin: auto;
+	width: 200px;
+	height: 40px;
+	font-size: 24px;
+	outline: none;
+}
+
+.active {
+	background-image: url('/img/emperorzurg.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#gameBoard {
+    width: 606px;
+    height: 606px;
+    border: 1px solid purple;
+    margin: auto;
+}
+
+.molehole {
+    width: 200px;
+    height: 200px;
+    border: 1px solid purple;
+    float: left;
+}
