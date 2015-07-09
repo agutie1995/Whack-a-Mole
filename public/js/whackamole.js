@@ -11,17 +11,16 @@ $('#start').click(function(){
     getRandomSquare();
 });
 
-//make 'mole' pop up in molehole
+//get random molehole
 function getRandomSquare(){
 	var moleholes = $('.molehole');
     var randomMolehole =  Math.floor(Math.random() * 9);
     var moleholeToAnimate = moleholes[randomMolehole];
     var id = moleholeToAnimate.getAttribute('id');
     animateMolehole(id);
-    // computerSequence.push(id);
-    // console.log(animateSquare(id));
 };
 
+//animate molehole
 function animateMolehole(id){
     $('#' + id).addClass('active');
     setTimeout(function(){
@@ -34,11 +33,19 @@ function fadeOut(id){
     $('#' + id).removeClass('active');
 };
 
+//second setTimeout to call on animateMolehole
 function fadeTimeout(){
     setTimeout(getRandomSquare, 1000);
 }
 
-//click function to make mole disappear
+//sound
+function laser(){
+    $('#laser').play();
+}
+
+//click function to make mole disappear when user clicks
+    //add points
+    //end game
 $('.molehole').click(function(event){
     var squareClicked = $(this).attr('id');
     var randomSquare = $(this).hasClass('active');
@@ -48,6 +55,7 @@ $('.molehole').click(function(event){
         fadeOut(squareClicked);
         userIndex++;
         $('#pointsCounter').val(userIndex);
+        laser();
     }
     if (userIndex >= 10){
         alert ('YOU DEFEATED EMPEROR ZURG!');
